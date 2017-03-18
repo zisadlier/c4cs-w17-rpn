@@ -9,4 +9,4 @@ python:
   - "3.6-dev"
   - "3.7-dev"
 
-script: test_rpn.py
+script: python test_rpn.py
