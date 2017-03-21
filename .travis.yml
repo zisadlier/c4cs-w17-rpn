@@ -6,6 +6,7 @@ python:
 
 before_install:
   - sudo apt-get install python-pip
+  - sudo pip install pytest-cov
   - sudo pip install python-coveralls
 
 script: py.test --cov rpn.py
