@@ -8,6 +8,8 @@ OPERATORS = {
 	'*': operator.mul,
 	'/': operator.truediv,
 	'^': operator.pow,
+	'<': operator.lt,
+	'>': operator.gt,
 }
 
 def calculate(arg):
@@ -23,6 +25,9 @@ def calculate(arg):
 			result = operator_fn(arg1, arg2)
 			stack.append(result)
 	return stack.pop()
+
+def get_fn(op):
+	return OPERATORS[op]
 
 def main():
 	while True:
