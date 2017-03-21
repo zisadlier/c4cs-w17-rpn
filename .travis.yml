@@ -4,7 +4,7 @@ python:
   - "3.5"
   - "3.5-dev"
 
-before_install:
+before_script:
   - sudo apt-get install python-pip
   - sudo pip install pytest-cov
   - sudo pip install python-coveralls
