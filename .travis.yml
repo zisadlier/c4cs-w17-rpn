@@ -9,4 +9,6 @@ python:
   - "3.6-dev"
   - "3.7-dev"
 
-script: python -m unittest test_rpn.py
+script: py.test --cov coveralls
+
+after_success: coveralls
