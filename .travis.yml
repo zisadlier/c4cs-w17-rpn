@@ -1,14 +1,9 @@
 language: python
 python:
-  - "3.2"
-  - "3.3"
   - "3.4"
   - "3.5"
   - "3.5-dev"
-  - "3.6"
-  - "3.6-dev"
-  - "3.7-dev"
 
-script: py.test --cov coveralls
+script: py.test --cov rpn.py
 
 after_success: coveralls
