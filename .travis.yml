@@ -6,6 +6,7 @@ python:
 
 before_install:
   - sudo apt-get install python-pip
+  - sudo pip install -U pytest
   - sudo pip install pytest pytest-cov
   - sudo pip install python-coveralls
 
