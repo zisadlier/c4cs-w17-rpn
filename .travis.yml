@@ -4,11 +4,9 @@ python:
   - "3.5"
   - "3.5-dev"
 
-before_install:
-  - sudo apt-get install python-pip
-  - sudo pip install -U pytest
-  - sudo pip install pytest pytest-cov
-  - sudo pip install python-coveralls
+install:
+  - pip install pytest-cov
+  - pip install coveralls
 
 script: py.test --cov rpn.py
 
