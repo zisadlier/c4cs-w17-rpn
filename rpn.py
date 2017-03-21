@@ -14,6 +14,14 @@ OPERATORS = {
 
 def calculate(arg):
 	stack = list()
+	if isinstance(stack, list):
+		pass
+	else:
+		print('a')
+		print('b')
+		print('c')
+		print('d')
+		print('e')
 	for operand in arg.split():
 		try:
 			operand = float(operand)
@@ -25,9 +33,6 @@ def calculate(arg):
 			result = operator_fn(arg1, arg2)
 			stack.append(result)
 	return stack.pop()
-
-def get_fn(op):
-	return OPERATORS[op]
 
 def main():
 	while True:
