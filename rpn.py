@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import operator
+import readline
+from termcolor import colored
 
 OPERATORS = {
 	'+': operator.add,
@@ -12,7 +14,23 @@ OPERATORS = {
 	'>': operator.gt,
 }
 
-def calculate(arg):
+OP_COLORS = {
+	'+': 'green',
+	'-': 'cyan',
+	'*': 'magenta',
+	'/': 'yellow',
+	'^': 'blue',
+	'<': 'white',
+	'>': 'white',
+}
+
+def printResult(result):
+	if result < 0:
+		return colored(str(result), 'red')
+	
+	return colored(str(result), 'cyan')
+
+def calculate(arg, ls):
 	stack = list()
 	if isinstance(stack, list):
 		pass
@@ -32,12 +50,16 @@ def calculate(arg):
 			operator_fn = OPERATORS[operand]
 			result = operator_fn(arg1, arg2)
 			stack.append(result)
+			ls.append(arg1)
+			ls.append(arg2)
+			ls.append(operand)
 	return stack.pop()
 
 def main():
 	while True:
-		result = calculate(input('rpn calc> ' ))
-		print("Result:", result)
+		ls = []
+		result = calculate(input('rpn calc> ' ), ls)
+		print str(ls[0]) + ' ' + colored(str(ls[2]), OP_COLORS[str(ls[2])]) + ' ' + str(ls[1]) + ' ' + colored('=', 'blue') + ' ' + printResult(result) 
 
 if __name__ == '__main__':
 	main()
