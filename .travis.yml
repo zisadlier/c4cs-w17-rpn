@@ -7,6 +7,7 @@ python:
 install:
   - pip install pytest-cov
   - pip install coveralls
+  - pip install termcolor
 
 script: coverage run test_rpn.py
 
