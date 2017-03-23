@@ -24,7 +24,7 @@ OP_COLORS = {
 	'>': 'white',
 }
 
-def printResult(result):
+def printNum(result):
 	if result < 0:
 		return colored(str(result), 'red')
 	
@@ -59,7 +59,7 @@ def main():
 	while True:
 		ls = []
 		result = calculate(input('rpn calc> ' ), ls)
-		print(str(ls[0]) + ' ' + colored(str(ls[2]), OP_COLORS[str(ls[2])]) + ' ' + str(ls[1]) + ' ' + colored('=', 'blue') + ' ' + printResult(result)) 
+		print(printNum(ls[0]) + ' ' + colored(str(ls[2]), OP_COLORS[str(ls[2])]) + ' ' + printNum(ls[1]) + ' ' + colored('=', 'blue') + ' ' + printNum(result)) 
 
 if __name__ == '__main__':
 	main()
