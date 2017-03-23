@@ -9,6 +9,6 @@ install:
   - pip install coveralls
   - pip install termcolor
 
-script: coverage run test_rpn.py
+script: coverage run -m unittest discover
 
 after_success: coveralls
