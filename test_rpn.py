@@ -1,6 +1,5 @@
 import unittest
 import rpn
-import termcolor
 
 class TestBasics(unittest.TestCase):
 	def test_add(self):
